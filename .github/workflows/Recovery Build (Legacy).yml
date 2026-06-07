@@ -122,6 +122,7 @@ jobs:
 
     - name: Building recovery
       run: |
+        echo BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2668000000 >> BoardConfig.mk
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
         lunch ${{ steps.gdt.outputs.MAKEFILE_NAME }}-eng
